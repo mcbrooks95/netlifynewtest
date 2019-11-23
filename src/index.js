@@ -36,7 +36,7 @@ const routing = (
         <div>
           <Route path="/login" component={LoginParent} />
           <Route path="/user" component={User} />
-          {/* <Route path="" component={App} /> */}
+          <Route path="/" component={() => (<div>hello world!</div>)} />
         </div>
     </Router>
   </ApolloProvider>
