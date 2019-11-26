@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react'
 // import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import DeleteUser from './DeleteUser'
+import ReactPaginate from 'react-paginate';
 // import { LINKS_PER_PAGE } from '../constants'
 
 
@@ -27,6 +28,32 @@ class AllUsers extends Component {
       <Fragment>
         <div>Querying worked!</div>
       <div>
+
+
+
+
+
+      <div className="commentBox">
+        {/* <CommentList data={this.state.data} /> */}
+        <ReactPaginate
+          previousLabel={'previous'}
+          nextLabel={'next'}
+          breakLabel={'...'}
+          breakClassName={'break-me'}
+          pageCount={5}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={() => { alert(`page changed!`)}}
+          containerClassName={'pagination'}
+          subContainerClassName={'pages pagination'}
+          activeClassName={'active'}
+        />
+      </div>
+
+
+
+
+
         {this.props.users.map(user =>
            <React.Fragment>
               <div> {user.contact_email + ` ` + user.contact_first_name + ` ` + user.contact_last_name} </div>
