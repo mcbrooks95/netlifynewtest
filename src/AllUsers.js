@@ -4,6 +4,7 @@ import React, { Component, Fragment } from 'react'
 import gql from 'graphql-tag'
 import DeleteUser from './DeleteUser'
 import ReactPaginate from 'react-paginate';
+import './index.css';
 // import { LINKS_PER_PAGE } from '../constants'
 
 
@@ -43,7 +44,7 @@ class AllUsers extends Component {
           pageCount={5}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
-          onPageChange={() => { alert(`page changed!`)}}
+          onPageChange={() => { console.log(`page changed!`)}}
           containerClassName={'pagination'}
           subContainerClassName={'pages pagination'}
           activeClassName={'active'}
