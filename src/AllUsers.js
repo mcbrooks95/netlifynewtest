@@ -5,6 +5,21 @@ import ReactPaginate from 'react-paginate';
 import './index.css';
 
 class AllUsers extends Component {
+  state = {
+    currentUsers: this.props.users,
+    currentPage: 1
+  }
+
+  handlePageClick = pageNumber => {
+    console.log(`about to print pageNumber`)
+    console.log(pageNumber.selected)
+    // let selected = data.selected;
+    // let offset = Math.ceil(selected * this.props.perPage);
+
+    this.setState({ currentPage: pageNumber.selected })
+    this.setState({ currentUsers: pageNumber.selected })
+  };
+
   render() {
     return (
       <Fragment>
@@ -21,7 +36,7 @@ class AllUsers extends Component {
           pageCount={5}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
-          onPageChange={() => { console.log(`page changed!`)}}
+          onPageChange={(pageNumber) => { this.handlePageClick(pageNumber) }}
           containerClassName={'pagination'}
           subContainerClassName={'pages pagination'}
           activeClassName={'active'}
